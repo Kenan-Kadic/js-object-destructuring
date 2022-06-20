@@ -26,4 +26,63 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderDelivery: function ({starterIndex, mainIndex, time, address}){
+    console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+     will be delivered to ${address} at ${time}`);
+  },
+
 };
+// HOW TO CALL A FUNCTION and PASS IN AN OBJECT OF OPTIONS ---
+// This might allow you to add items to the accessed web api
+
+  restaurant.orderDelivery({
+    time: '22.30',
+    address: 'Via del Sole, 21',
+    mainIndex: 2,
+    starterIndex: 2,
+
+  })
+
+// OBJECT DESTRUCTURING ---
+
+//this destructuring is done with {}
+
+// const {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories);
+// this creates 3 new variables
+// this is useful for API fetches
+
+
+
+// YOU CAN GIVE VARIABLES NEW NAMES ---
+// const {name: restaurantName, openingHours: hours, categories: tags} = restaurant;
+// console.log(restaurantName, hours, tags)
+
+
+// YOU CAN SET DEFAULT VALUES ---
+
+// const {menu = [], starterMenu: starters = []} = restaurant;
+
+
+// YOU CAN MUTATE VARIABLES - GIVE THEM NEW VALUES
+
+// let a = 111;
+// let b = 999;
+// const obj = {a: 23, b: 7, c: 14 };
+// // look at how the next line is in parentheses
+// ({a, b} = obj);
+// console.log(a, b);
+
+
+// HOW DO YOU ACCESS NESTED OBJECTS THROUGH DESTRUCTURING?
+
+// const {fri: {open, close}} = openingHours;
+// console.log(open, close);
+
+
+// YOU CAN GIVE NEW VARIABLE NAMES TO OPEN AND CLOSE IF YOU WANT
+
+// const {fri: {open: newVariableOpen, close: newVariableClose}} = openingHours;
+// console.log(newVariableOpen, newVariableClose);
+
